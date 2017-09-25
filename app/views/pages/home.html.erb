@@ -1,0 +1,23 @@
+<div class="jumbotron">
+    
+     <% if user_signed_in? %>
+    
+    
+  <h1 class="display-3">Bem-vindo ao ClassGeek - Você está LOGADO!!!</h1>
+    
+    
+    <% else %>
+    
+    <h1 class="display-3">Bem-vindo ao ClassGeek - Cadaste-se!!!</h1>
+    
+  <p class="lead">blá bla bla bla</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <%= link_to "Cadastrar", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+      
+      
+      <% end %>
+    
+  </p>
+</div>

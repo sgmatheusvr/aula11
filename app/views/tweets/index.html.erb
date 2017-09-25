@@ -1,0 +1,44 @@
+<div class="container">
+
+
+<div class="row">
+  
+<div class="col-4">
+        <div class="card" style="width: 15rem;">
+          <img class="card-img-top" src="..." alt="Card image cap">
+          <div class="card-block">
+            <h4 class="card-title"><%= current_user.name %></h4>
+            <p class="card-text"><%= current_user.email %></p>
+            <%= link_to "Ver Perfil", edit_user_registration_path, class: "btn btn-primary" %>
+           
+          </div>
+    </div>
+</div>
+    
+    
+    
+<div class="col-8">
+    
+<ul class="list-group">
+    <center><%= link_to 'New Tweet', new_tweet_path %></center>
+    
+       <% @tweets.order(id: :desc).each do |tweet| %>
+    
+    <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
+    <h5 class="list-group-heading"><%= tweet.user.email %></h5>
+    <p class="list-group-text"><%= tweet.conteudo %></p>
+    <p class="list-group-text">(<%= tweet.created_at.strftime("%d/%m/%Y - %H:%M") %>)</p>
+    
+       <% end %>
+          
+  
+    <% end %>
+ 
+</ul>
+    
+    </div>
+    </div>
+
+    
+</div>
+
